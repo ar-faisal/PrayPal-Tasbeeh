@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    </head>
+    <body>
+        
+      
+    
+
+
+<nav class="navbar navbar-expand-lg navbar-dark  fs-3">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="unlimitedCounter.html">Infinite Counter</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="namaz.html">Namaz</a>
+        </li>
+         <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link active" aria-current="page" href="#hist">History</a>
+        </li>
+      </ul>
+       
+   
+</nav>
+
+<div id="hist">
+    
+</div>
+<div Class="name">--Abdur Rahman Faisal--</div>
+
+
+
+<style>
+    
+  body{
+      background-color:black;
+  animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+ @font-face {
+            font-family: 'Mate SC';
+            src: url(fonts/MateSC.ttf);
+
+        }
+
+.active{
+  border : 2px solid green;
+      
+      
+      padding: 10px 85px;
+      }
+  nav{
+      font-family: 'Mate SC';
+            
+  }
+  .container-fluid{
+background-color: black;!
+  }
+.name {
+
+            color: white;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+
+            font-family: 'Mate SC';
+
+        }
+#hist{
+    font-size: 40px;
+    
+}
+#hist > div{
+    height : 15%;
+    background-color:#002dff1b;
+    margin:10% 7%;
+    width: 85%;
+    justify-content:center;
+    border: 2px solid #002dff;
+}
+#hist >div > h1{
+
+    color:#00ff18;
+    
+    position: relative;
+    left:10%;
+    top:10%;
+    font-size:100px;
+    
+        
+}
+#hist >div > h2{
+
+    color:#ff9f80;
+   
+    position: relative;
+    left:10%;
+    top:0%;
+    font-size:100px;
+    
+        
+}
+#hist >div > h3{
+
+    color:#af6aff;
+    position: relative;
+    left:79%;
+    top:-30%;
+    font-size:60px;
+    transform: rotate(90deg);
+    
+    width:20%;
+    border: 1px solid yellow;
+    
+        
+}
+
+
+</style>
+<script>
+ 
+ 
+ 
+ 
+    
+</script>
+<script>
+    window.onload = function(){ 
+    var hist =document.getElementById("hist");
+   var retrievedObject =
+localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+   stored.forEach(stored =>{ 
+ let div =  document.createElement('div');
+ let h1= document.createElement('h1');
+ h1.innerHTML=`${stored.date}`;
+ let h2= document.createElement('h2');
+ h2.innerHTML=`${stored.month}`;
+ let h3= document.createElement('h3');
+ h3.innerHTML=`${stored.year}`;
+
+div.append(h1);
+div.append(h2);
+div.append(h3);
+hist.append(div);
+       
+       });
+   
+    
+    }
+</script>
+
+
+<script src="js/bootstrap/bootstrap.js">  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>

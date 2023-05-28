@@ -4,7 +4,7 @@
 
     <!-- bootstrap  -->
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     <!-- fonts 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,9 +59,38 @@
      Go To Potrait Mode</div>
      -->
 
-    <div class="content-box-lg">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fs-3">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link active" aria-current="page" href="#Home">Home</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="unlimitedCounter.html">Infinite Counter</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="namaz.html">Namaz</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="history.html">History</a>
+        </li>
+        
+      </ul>
+       
+    </div>
+  </div>
+</nav>
+
+
+    <div class="content-box-lg" id="Home">
+        
         <div class="container">
-            <div class="row">
+                <div class="row">
                 <div class="col-6">
                     <div class="box" id="box1" onclick="myFunction1()">
                         <div class="innerboxup">
@@ -358,6 +387,8 @@
     <div Class="name">--Abdur Rahman Faisal--</div>
 
     <style>
+        
+        
         @font-face {
             font-family: 'Mate SC';
             src: url(fonts/MateSC.ttf);
@@ -374,6 +405,8 @@
             font-family: 'PT Serif';
             src: url(fonts/PTSerif.ttf);
         }
+        
+      
 
         body {
             background-color: black;
@@ -447,46 +480,46 @@
         }
 
         .bg-blueup {
-            background-color: #195996;
+            
             z-index: 10;
             position: fixed;
             top: 5%;
             left: 10%;
             width: 80%;
             text-align: center;
-            font-size: 40px;
+            font-size: 35px;
             line-height: 110%;
-
+            color: #ab1d24;
             animation: fadeInAnimation ease .6s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
-            border: 5px solid white;
-            border-radius: 50px 10px;
+            border: 2px solid #aba947;
+            
 
         }
 
         .bg-bluedown {
-            background-color: #40cbff;
+            background-color: black;
             z-index: 10;
             position: fixed;
             top: 11%;
             width: 80%;
             left: 8%;
-            font-size: 60px;
+            font-size: 40px;
             padding: 20px;
             line-height: 110%;
-            margin-top: 5px;
-
+            margin-top: 30px;
+            color:#0c9515;
             animation: fadeInAnimation ease .6s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
 
-            border: 5px solid white;
-            border-radius: 50px 10px;
+            border: 2px solid #aba947;
+            
         }
 
         .bg-goldup {
-            background-color: #f1a928;
+            background-color: #2d46b5cf;
             position: static;
             z-index: 0;
             text-align: left;
@@ -496,10 +529,11 @@
             width: 100%;
             border-radius: 0;
             border: 0;
+            color:white;
         }
 
         .bg-golddown {
-            background-color: #ffdc00;
+            background-color: #7bff55c5;
             position: static;
             z-index: 0;
             width: 98%;
@@ -512,7 +546,7 @@
 
             border: 0;
             border-top: 1px solid black;
-
+color: #2b58fffb;
         }
 
         .overlay {
@@ -535,16 +569,15 @@
         progress {
             height: 0.8%;
             width: 99%;
-            position: relative;
-            top: -17px;
-            left: 5px;
+            margin-top:-17px;
             border: 1% solid gray;
-
+            margin-bottom:20px;
+            margin-left:6px;
         }
 
         span {
 
-            color: red;
+            color: #ab1d24;
             font-family: 'PT Serif';
 
         }
@@ -589,6 +622,15 @@
             font-family: 'Mate SC';
 
         }
+        .active{
+  border : 2px solid green;
+      
+      
+      padding: 10px 85px;
+      }
+      nav{
+      font-family: 'Mate SC';
+  }
     </style>
     <script>
 
@@ -603,10 +645,12 @@ document.getElementById("box1").onclick="";
 
             var element = document.getElementById("p1");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.width = "348%";
-            element.style.top = "-44px";
-            element.style.left = "-33px";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
+            
 
 
             var overlay = document.getElementById("overlay1");
@@ -623,6 +667,7 @@ if (localStorage.clickcount1) {
                 if (document.getElementById("p1").value == 100) {
 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box1").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -631,11 +676,24 @@ var audio = document.getElementById("audio");
 
                     var element = document.getElementById("p1");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
-                }
+              
+              
+  
+            
+            
+            
+            
+                    
+            
+            
+            
+            
+            
+              }
             });
 
         }
@@ -651,11 +709,11 @@ document.getElementById("box2").onclick="";
 
             var element = document.getElementById("p2");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-169";
-            element.style.width = "348%";
-            element.style.left = "-33";
-            element.style.right = "0";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
 
 
@@ -673,6 +731,7 @@ if (localStorage.clickcount2) {
                 if (document.getElementById("p2").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box2").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -681,7 +740,7 @@ if (localStorage.clickcount2) {
 
                     var element = document.getElementById("p2");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -702,10 +761,11 @@ document.getElementById("box3").onclick="";
 
             var element = document.getElementById("p3");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.width = "348%";
-            element.style.left = "-33";
-            element.style.top = "-342";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
 
             var overlay = document.getElementById("overlay3");
@@ -722,6 +782,7 @@ if (localStorage.clickcount3) {
                 if (document.getElementById("p3").value == 100) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box3").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -730,7 +791,7 @@ if (localStorage.clickcount3) {
 
                     var element = document.getElementById("p3");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -749,11 +810,11 @@ document.getElementById("box4").onclick="";
 
             var element = document.getElementById("p4");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-424";
-            element.style.width = "348%";
-            element.style.left = "-33";
-            element.style.right = "0";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
 
             var overlay = document.getElementById("overlay4");
@@ -772,6 +833,7 @@ if (localStorage.clickcount4) {
                 if (document.getElementById("p4").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box4").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -780,7 +842,7 @@ if (localStorage.clickcount4) {
 
                     var element = document.getElementById("p4");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -800,10 +862,11 @@ document.getElementById("box5").onclick="";
 
             var element = document.getElementById("p5");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-574";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
 
             var overlay = document.getElementById("overlay5");
@@ -821,6 +884,7 @@ if (localStorage.clickcount5) {
                 if (document.getElementById("p5").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box5").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -830,7 +894,7 @@ if (localStorage.clickcount5) {
 
                     var element = document.getElementById("p5");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -850,10 +914,11 @@ document.getElementById("box6").onclick="";
 
             var element = document.getElementById("p6");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-750";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
 
             var overlay = document.getElementById("overlay6");
@@ -871,6 +936,7 @@ if (localStorage.clickcount6) {
                 if (document.getElementById("p6").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box6").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -879,7 +945,7 @@ if (localStorage.clickcount6) {
 
                     var element = document.getElementById("p6");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -898,10 +964,11 @@ document.getElementById("box7").onclick="";
 
             var element = document.getElementById("p7");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-974";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
 
             var overlay = document.getElementById("overlay7");
@@ -919,6 +986,7 @@ if (localStorage.clickcount7) {
                 if (document.getElementById("p7").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box7").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -927,7 +995,7 @@ if (localStorage.clickcount7) {
 
                     var element = document.getElementById("p7");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -947,10 +1015,11 @@ document.getElementById("box8").onclick="";
 
             var element = document.getElementById("p8");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1318";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay8");
             overlay.style.display = "block";
@@ -966,6 +1035,7 @@ if (localStorage.clickcount8) {
                 if (document.getElementById("p8").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box8").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -975,7 +1045,7 @@ if (localStorage.clickcount8) {
 
                     var element = document.getElementById("p8");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -994,10 +1064,11 @@ document.getElementById("box9").onclick="";
 
             var element = document.getElementById("p9");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1469";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay9");
             overlay.style.display = "block";
@@ -1014,6 +1085,7 @@ if (localStorage.clickcount9) {
                 if (document.getElementById("p9").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box9").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1022,7 +1094,7 @@ if (localStorage.clickcount9) {
 
                     var element = document.getElementById("p9");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1042,10 +1114,11 @@ document.getElementById("box10").onclick="";
 
             var element = document.getElementById("p10");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1595";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay10");
             overlay.style.display = "block";
@@ -1062,6 +1135,7 @@ if (localStorage.clickcount10) {
                 if (document.getElementById("p10").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box10").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1070,7 +1144,7 @@ if (localStorage.clickcount10) {
 
                     var element = document.getElementById("p10");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1089,10 +1163,11 @@ document.getElementById("box11").onclick="";
 
             var element = document.getElementById("p11");
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1794";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay11");
             overlay.style.display = "block";
@@ -1109,6 +1184,7 @@ if (localStorage.clickcount11) {
                 if (document.getElementById("p11").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box11").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1117,7 +1193,7 @@ if (localStorage.clickcount11) {
 
                     var element = document.getElementById("p11");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1138,11 +1214,11 @@ document.getElementById("box12").onclick="";
             var element = document.getElementById("p12");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-247px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay12");
             overlay.style.display = "block";
@@ -1159,6 +1235,7 @@ if (localStorage.clickcount12) {
                 if (document.getElementById("p12").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box12").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1167,7 +1244,7 @@ if (localStorage.clickcount12) {
 
                     var element = document.getElementById("p12");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1189,11 +1266,11 @@ document.getElementById("box13").onclick="";
             var element = document.getElementById("p13");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-395px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay13");
             overlay.style.display = "block";
@@ -1210,6 +1287,7 @@ if (localStorage.clickcount13) {
                 if (document.getElementById("p13").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box13").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1218,7 +1296,7 @@ if (localStorage.clickcount13) {
 
                     var element = document.getElementById("p13");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1238,10 +1316,11 @@ document.getElementById("box14").onclick="";
             var element = document.getElementById("p14");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1970";
-            element.style.width = "348%";
-            element.style.left = "-33";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay14");
             overlay.style.display = "block";
@@ -1258,6 +1337,7 @@ if (localStorage.clickcount14) {
                 if (document.getElementById("p14").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box14").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1266,7 +1346,7 @@ if (localStorage.clickcount14) {
 
                     var element = document.getElementById("p14");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1287,11 +1367,11 @@ document.getElementById("box15").onclick="";
             var element = document.getElementById("p15");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-44px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay15");
             overlay.style.display = "block";
@@ -1308,6 +1388,7 @@ if (localStorage.clickcount15) {
                 if (document.getElementById("p15").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box15").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1316,7 +1397,7 @@ if (localStorage.clickcount15) {
 
                     var element = document.getElementById("p15");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1337,11 +1418,11 @@ document.getElementById("box16").onclick="";
             var element = document.getElementById("p16");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-121px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay16");
             overlay.style.display = "block";
@@ -1358,6 +1439,7 @@ if (localStorage.clickcount16) {
                 if (document.getElementById("p16").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box16").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1366,7 +1448,7 @@ if (localStorage.clickcount16) {
 
                     var element = document.getElementById("p16");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1387,11 +1469,11 @@ document.getElementById("box17").onclick="";
             var element = document.getElementById("p17");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-665px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay17");
             overlay.style.display = "block";
@@ -1408,6 +1490,7 @@ if (localStorage.clickcount17) {
                 if (document.getElementById("p17").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box17").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1416,7 +1499,7 @@ if (localStorage.clickcount17) {
 
                     var element = document.getElementById("p17");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1435,11 +1518,11 @@ document.getElementById("box18").onclick="";
             var element = document.getElementById("p18");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-817px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay18");
             overlay.style.display = "block";
@@ -1456,6 +1539,7 @@ if (localStorage.clickcount18) {
                 if (document.getElementById("p18").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box18").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1464,7 +1548,7 @@ if (localStorage.clickcount18) {
 
                     var element = document.getElementById("p18");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1483,11 +1567,11 @@ document.getElementById("box19").onclick="";
             var element = document.getElementById("p19");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-942px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay19");
             overlay.style.display = "block";
@@ -1504,6 +1588,7 @@ if (localStorage.clickcount19) {
                 if (document.getElementById("p19").value == 33) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box19").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1512,7 +1597,7 @@ if (localStorage.clickcount19) {
 
                     var element = document.getElementById("p19");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1532,11 +1617,11 @@ document.getElementById("box20").onclick="";
             var element = document.getElementById("p20");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1113px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
 
 
@@ -1557,6 +1642,7 @@ if (localStorage.clickcount20) {
                 if (document.getElementById("p20").value == 6) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box20").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1565,7 +1651,7 @@ if (localStorage.clickcount20) {
 
                     var element = document.getElementById("p20");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1585,11 +1671,11 @@ document.getElementById("box21").onclick="";
             var element = document.getElementById("p21");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1338px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay21");
             overlay.style.display = "block";
@@ -1606,6 +1692,7 @@ if (localStorage.clickcount21) {
                 if (document.getElementById("p21").value == 14) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box21").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1614,7 +1701,7 @@ if (localStorage.clickcount21) {
 
                     var element = document.getElementById("p21");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1633,11 +1720,11 @@ document.getElementById("box22").onclick="";
             var element = document.getElementById("p22");
 
             element.style.zIndex = "10";
-            element.style.postion = "fixed";
-            element.style.top = "-1506px";
-            element.style.left = "-113%";
-            element.style.right = "0";
-            element.style.width = "348%";
+            element.style.position = "fixed";
+            element.style.width = "99%";
+            element.style.top = "0.8%";
+            element.style.left = "0%";
+            element.style.right= "0%";
 
             var overlay = document.getElementById("overlay22");
             overlay.style.display = "block";
@@ -1654,6 +1741,7 @@ if (localStorage.clickcount22) {
                 if (document.getElementById("p22").value == 1) {
                 var audio = document.getElementById("audio");
         audio.play();
+        history();
                     overlay.style.display = "none";
                     var element = document.getElementById("box22").childNodes[1];
                     element.classList.add("bg-goldup");
@@ -1662,7 +1750,7 @@ if (localStorage.clickcount22) {
 
                     var element = document.getElementById("p22");
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.position = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1671,33 +1759,132 @@ if (localStorage.clickcount22) {
             });
 
         }
+   function history(){
+if(localStorage.clickcount1 == 100 && localStorage.clickcount2 == 33 && localStorage.clickcount3 == 100 &&
+localStorage.clickcount4 == 6 && localStorage.clickcount5 == 6 &&
+localStorage.clickcount6 == 6 && localStorage.clickcount7 == 6 &&
+localStorage.clickcount8 == 6 && localStorage.clickcount9 == 33 &&
+localStorage.clickcount10 == 33 && localStorage.clickcount11 == 33 && localStorage.clickcount12 == 33 && localStorage.clickcount13 == 33 &&
+localStorage.clickcount14 == 6 && localStorage.clickcount15 == 6 &&
 
-window.onload = function(){ 
+localStorage.clickcount16 == 33 && localStorage.clickcount17 == 33 &&
+
+localStorage.clickcount18 == 33 && localStorage.clickcount19 == 33 &&
+
+localStorage.clickcount20 == 6 && localStorage.clickcount21 == 14 &&
+
+localStorage.clickcount22 == 1 )
+{
+    
+var today = new Date();
+var month = today.toLocaleString('default', { month: 'long' });
+var date = today.getDate();
+var year = today.getFullYear();
+var monthnum = today.getMonth()+1;
+
+
+
+var lasthistorydate= localStorage.getItem('lasthistorydate');
+var lasthistorymonth= localStorage.getItem('lasthistorymonth');
+var lasthistoryyear= localStorage.getItem('lasthistoryyear');
+
+if(lasthistorydate == null){
+console.log("hello");
+
+    localStorage.setItem('lasthistorydate', date);
+    localStorage.setItem('lasthistorymonth', monthnum);
+    localStorage.setItem('lasthistoryyear', year);
+    var history = [];
+    var newhistory = {
+     date:        date,
+     month:         month,
+     year:         year
+ };
+ history.push(newhistory);
+ 
+localStorage.setItem("histories", JSON.stringify(history));
+}
+
+else {
+if(year>lasthistoryyear || monthnum>lasthistorymonth || date>lasthistorydate){
+localStorage.setItem('lasthistorydate', date);
+    localStorage.setItem('lasthistorymonth', monthnum);
+    localStorage.setItem('lasthistoryyear', year);
+
+    var retrievedObject = localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+
+// add a new student
+var newhistory2 = {
+    date:        date,
+    month:         month,
+    year: year
+};
+stored.push(newhistory2);
+
+// Update the storage
+localStorage.setItem("histories", JSON.stringify(stored));
+
+
+
+}
+
+}
+ }
+      
+}
+
+window.onload = function(){
+
+
 
 var today = new Date();
 var month = today.getMonth()+1;
 var date = today.getDate();
+var year = today.getFullYear();
 
 var setupdate= localStorage.getItem('setupdate');
 var setupmonth= localStorage.getItem('setupmonth');
+var setupyear= localStorage.getItem('setupyear');
 
 if (setupdate == null) {
     localStorage.setItem('setupdate', date);
     localStorage.setItem('setupmonth', month);
+    localStorage.setItem('setupyear', year);
 } 
 
 
 else{
- if(month>setupmonth){
- localStorage.clear()
- localStorage.setItem('setupdate', date);
+ if(year>setupyear || month>setupmonth || date>setupdate){
+ localStorage.removeItem("clickcount1");
+ localStorage.removeItem("clickcount2");
+ localStorage.removeItem("clickcount3");
+ localStorage.removeItem("clickcount4");
+ localStorage.removeItem("clickcount5");
+ localStorage.removeItem("clickcount6");
+ localStorage.removeItem("clickcount7");
+ localStorage.removeItem("clickcount8");
+ localStorage.removeItem("clickcount9");
+ localStorage.removeItem("clickcount10");
+ localStorage.removeItem("clickcount11");
+ localStorage.removeItem("clickcount12");
+ localStorage.removeItem("clickcount13");
+ localStorage.removeItem("clickcount14");
+ localStorage.removeItem("clickcount15");
+ localStorage.removeItem("clickcount16");
+ localStorage.removeItem("clickcount17");
+ localStorage.removeItem("clickcount18");
+ localStorage.removeItem("clickcount19");
+ localStorage.removeItem("clickcount20");
+ localStorage.removeItem("clickcount21");
+ localStorage.removeItem("clickcount22");
+ localStorage.removeItem("clickucount1");
+ 
+     localStorage.setItem('setupdate', date);
  localStorage.setItem('setupmonth', month);
+ localStorage.setItem('setupyear', year);
  }
- else if(date>setupdate){
- localStorage.clear();
- localStorage.setItem('setupdate', date);
- localStorage.setItem('setupmonth', month);    
- }
+ 
     
     
 }
@@ -1799,7 +1986,7 @@ var element = document.getElementById("box1").childNodes[3];                  el
 var element = document.getElementById("p1");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1813,7 +2000,7 @@ var element = document.getElementById("box2").childNodes[3];                  el
 var element = document.getElementById("p2");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1827,7 +2014,7 @@ var element = document.getElementById("box3").childNodes[3];                  el
 var element = document.getElementById("p3");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1841,7 +2028,7 @@ var element = document.getElementById("box4").childNodes[3];                  el
 var element = document.getElementById("p4");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1855,7 +2042,7 @@ var element = document.getElementById("box5").childNodes[3];                  el
 var element = document.getElementById("p5");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1869,7 +2056,7 @@ var element = document.getElementById("box6").childNodes[3];                  el
 var element = document.getElementById("p6");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1883,7 +2070,7 @@ var element = document.getElementById("box7").childNodes[3];                  el
 var element = document.getElementById("p7");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1897,7 +2084,7 @@ var element = document.getElementById("box8").childNodes[3];                  el
 var element = document.getElementById("p8");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1910,7 +2097,7 @@ var element = document.getElementById("box9").childNodes[3];                  el
 var element = document.getElementById("p9");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1924,7 +2111,7 @@ var element = document.getElementById("box10").childNodes[3];                  e
 var element = document.getElementById("p10");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1938,7 +2125,7 @@ var element = document.getElementById("box11").childNodes[3];                  e
 var element = document.getElementById("p11");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1952,7 +2139,7 @@ var element = document.getElementById("box12").childNodes[3];                  e
 var element = document.getElementById("p12");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1966,7 +2153,7 @@ var element = document.getElementById("box13").childNodes[3];                  e
 var element = document.getElementById("p13");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1979,7 +2166,7 @@ var element = document.getElementById("box14").childNodes[3];                  e
 var element = document.getElementById("p14");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -1993,7 +2180,7 @@ var element = document.getElementById("box15").childNodes[3];                  e
 var element = document.getElementById("p15");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "status";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2007,7 +2194,7 @@ var element = document.getElementById("box16").childNodes[3];                  e
 var element = document.getElementById("p16");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2020,7 +2207,7 @@ var element = document.getElementById("box17").childNodes[3];                  e
 var element = document.getElementById("p17");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2033,7 +2220,7 @@ var element = document.getElementById("box18").childNodes[3];                  e
 var element = document.getElementById("p18");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2046,7 +2233,7 @@ var element = document.getElementById("box19").childNodes[3];                  e
 var element = document.getElementById("p19");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2059,7 +2246,7 @@ var element = document.getElementById("box20").childNodes[3];                  e
 var element = document.getElementById("p20");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2072,7 +2259,7 @@ var element = document.getElementById("box21").childNodes[3];                  e
 var element = document.getElementById("p21");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2085,7 +2272,7 @@ var element = document.getElementById("box22").childNodes[3];                  e
 var element = document.getElementById("p22");
 
                     element.style.zIndex = "0";
-                    element.style.postion = "relative";
+                    element.style.postion = "static";
                     element.style.width = "99%";
                     element.style.top = "-17px";
                     element.style.left = "6px";
@@ -2100,6 +2287,7 @@ var element = document.getElementById("p22");
 
     </script>
     <script src="js/bootstrap/bootstrap.js">  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 </body>
 
