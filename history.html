@@ -200,7 +200,7 @@ background-color: black;!
    var retrievedObject =
 localStorage.getItem("histories");
 var stored          = JSON.parse(retrievedObject);
-   stored.forEach(stored =>{ 
+   stored.slice().reverse().forEach(stored =>{ 
  let div =  document.createElement('div');
  let h1= document.createElement('h1');
  h1.innerHTML=`${stored.date}`;
