@@ -108,8 +108,8 @@ background-color: black;!
     position: relative;
     left:10%;
     top:10%;
-    font-size:100px;
-    
+    font-size:110px;
+    padding-left:7%;
         
 }
 #hist >div > h2{
@@ -119,15 +119,15 @@ background-color: black;!
     position: relative;
     left:10%;
     top:0%;
-    font-size:100px;
-    
+    font-size:90px;
+    padding-left:7%;
         
 }
 #hist >div > h3{
 
     color:#af6aff;
     position: relative;
-    left:79%;
+    left:75%;
     top:-30%;
     font-size:60px;
     transform: rotate(90deg);
@@ -137,7 +137,37 @@ background-color: black;!
     
         
 }
-
+.tread{
+    color: green;
+    position: relative;
+    top: -360px;
+    padding-left:70%;
+    font-family: 'Mate SC';
+    font-size: 30px;
+   
+}
+.tnread{
+    color: red;
+    position: relative;
+    top: -360px;
+    padding-left:70%;
+    font-family: 'Mate SC';
+    font-size: 30px;
+}
+.nread{
+    color: #00ff2d;
+    position: relative;
+    top: -270px;
+    left: 10px;
+    font-family: 'Mate SC';
+}
+.nnread{
+    color: #ff1554;
+    position: relative;
+    top: -270px;
+    left: 10px;
+    font-family: 'Mate SC';
+}
 
 </style>
 <script>
@@ -149,6 +179,23 @@ background-color: black;!
 </script>
 <script>
     window.onload = function(){ 
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
     var hist =document.getElementById("hist");
    var retrievedObject =
 localStorage.getItem("histories");
@@ -161,10 +208,86 @@ var stored          = JSON.parse(retrievedObject);
  h2.innerHTML=`${stored.month}`;
  let h3= document.createElement('h3');
  h3.innerHTML=`${stored.year}`;
+ div.append(h1);
+ div.append(h2);
+ div.append(h3);
+ 
+ if(stored.tasbeeh){
+ let h4= document.createElement('h4');
+ h4.innerHTML=`Tasbeeh`;
+ h4.classList.add("tread");
+ div.append(h4);
+ }
+ else{
+     let h4= document.createElement('h4');
+ h4.innerHTML=`Tasbeeh`;
+ h4.classList.add("tnread");
+ div.append(h4);
+ }
+ if(stored.fajr){
+ let h4= document.createElement('h4');
+ h4.innerHTML=`F`;
+ h4.classList.add("nread");
+ div.append(h4);
+ }
+ else{
+     let h4= document.createElement('h4');
+ h4.innerHTML=`F`;
+ h4.classList.add("nnread");
+ div.append(h4);
+ }
+ 
+ if(stored.dhuhr){
+ let h4= document.createElement('h4');
+ h4.innerHTML=`D`;
+ h4.classList.add("nread");
+ div.append(h4);
+ }
+ else{
+     let h4= document.createElement('h4');
+ h4.innerHTML=`D`;
+ h4.classList.add("nnread");
+ div.append(h4);
+ }
+ if(stored.asr){
+ let h4= document.createElement('h4');
+ h4.innerHTML=`A`;
+ h4.classList.add("nread");
+ div.append(h4);
+ }
+ else{
+     let h4= document.createElement('h4');
+ h4.innerHTML=`A`;
+ h4.classList.add("nnread");
+ div.append(h4);
+ }
+if(stored.magrib){
+ let h4= document.createElement('h4');
+ h4.innerHTML=`M`;
+ h4.classList.add("nread");
+ div.append(h4);
+ }
+ else{
+     let h4= document.createElement('h4');
+ h4.innerHTML=`M`;
+ h4.classList.add("nnread");
+ div.append(h4);
+ }
+if(stored.isha){
+ let h4= document.createElement('h4');
+ h4.innerHTML=`I`;
+ h4.classList.add("nread");
+ div.append(h4);
+ }
+ else{
+     let h4= document.createElement('h4');
+ h4.innerHTML=`I`;
+ h4.classList.add("nnread");
+ div.append(h4);
+ }
 
-div.append(h1);
-div.append(h2);
-div.append(h3);
+
+
 hist.append(div);
        
        });

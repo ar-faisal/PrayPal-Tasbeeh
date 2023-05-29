@@ -34,9 +34,15 @@
    
 </nav>
 <div id="namaz">
+    <div id="fajr" onClick="funcf()">Fajr</div>
+    <div id="dhuhr" onclick="funcd()">Dhuhr</div>
+    <div id="asr" onclick="funca()">Asr</div>
+    <div id="magrib" onclick="funcm()">Magrib</div>
+    <div id="isha" onclick="funci()">Isha</div>
     
 </div>
-<div Class="name">--Abdur Rahman Faisal--</div>
+ 
+<div class="name">--Abdur Rahman Faisal--</div>
 
 <style>
     
@@ -73,9 +79,7 @@
       font-family: 'Mate SC';
             
   }
-  .container-fluid{
-background-color: black;!
-  }
+  
 .name {
 
             color: white;
@@ -86,7 +90,236 @@ background-color: black;!
             font-family: 'Mate SC';
 
         }
+        
+ #namaz > div{
+ font-family: 'Mate SC';
+    font-size:100px;
+    height : 13%;
+    background-color:#002dff1b;
+    margin:10% 7%;
+    width: 85%;
+    justify-content:center;
+    border: 2px solid #002dff;
+    display: flex;
+    color: #ff9f80;
+    padding-top: 50px;
+}
+
+.namazdone {
+background-color:red !important;
+color: blue !important;
+}
+
+.mystyle {
+  width: 100%;
+  padding: 25px;
+  background-color: coral;
+  color: white;
+  font-size: 25px;
+}
         </style>
+        
+        
+ <script>
+     
+     
+     function funcf(){
+           
+       
+    localStorage.setItem('fajr',1);
+var element = document.getElementById("fajr");
+element.classList.add("namazdone");    
+hisso();
+     } 
+     
+     
+     
+     function funcd(){
+         localStorage.setItem('dhuhr',1);
+         var element = document.getElementById("dhuhr");
+element.classList.add("namazdone");   
+hisso();
+     }
+     function funca(){
+         localStorage.setItem('asr',1);
+         var element = document.getElementById("asr");
+element.classList.add("namazdone");   
+hisso();
+     }
+     function funcm(){
+         localStorage.setItem('magrib',1);
+         var element = document.getElementById("magrib");
+element.classList.add("namazdone");   
+hisso();
+     }
+     function funci(){
+         localStorage.setItem('isha',1);
+         var element = document.getElementById("isha");
+element.classList.add("namazdone");   
+hisso();
+     }
+function hisso(){
+    var today = new Date();
+var month = today.getMonth()+1;
+var monthstr = today.toLocaleString('default', { month: 'long' });
+var date = today.getDate();
+var year = today.getFullYear();
+
+var setupdate= localStorage.getItem('setupdate');
+var setupmonth= localStorage.getItem('setupmonth');
+var setupyear= localStorage.getItem('setupyear');
+
+
+
+if (setupdate == null) {
+    localStorage.setItem('setupdate', date);
+    localStorage.setItem('setupmonth', month);
+    localStorage.setItem('setupyear', year);
+    
+    var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ 
+    var history = [];
+    var newhistory = {
+     date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha
+ };
+ history.push(newhistory);
+ 
+localStorage.setItem("histories", JSON.stringify(history));
+}
+
+
+
+else{
+ if(year>setupyear || month>setupmonth || date>setupdate){
+ 
+localStorage.removeItem("clickcount1");
+ localStorage.removeItem("clickcount2");
+ localStorage.removeItem("clickcount3");
+ localStorage.removeItem("clickcount4");
+ localStorage.removeItem("clickcount5");
+ localStorage.removeItem("clickcount6");
+ localStorage.removeItem("clickcount7");
+ localStorage.removeItem("clickcount8");
+ localStorage.removeItem("clickcount9");
+ localStorage.removeItem("clickcount10");
+ localStorage.removeItem("clickcount11");
+ localStorage.removeItem("clickcount12");
+ localStorage.removeItem("clickcount13");
+ localStorage.removeItem("clickcount14");
+ localStorage.removeItem("clickcount15");
+ localStorage.removeItem("clickcount16");
+ localStorage.removeItem("clickcount17");
+ localStorage.removeItem("clickcount18");
+ localStorage.removeItem("clickcount19");
+ localStorage.removeItem("clickcount20");
+ localStorage.removeItem("clickcount21");
+ localStorage.removeItem("clickcount22");
+ localStorage.removeItem("clickucount1");
+ localStorage.removeItem("tasbeeh");
+ localStorage.removeItem("fajr");
+ localStorage.removeItem("dhuhr");
+ localStorage.removeItem("asr");
+ localStorage.removeItem("magrib");
+ localStorage.removeItem("isha");
+ 
+ var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ 
+ localStorage.setItem('setupdate', date);
+ localStorage.setItem('setupmonth', month);
+ localStorage.setItem('setupyear', year); 
+ 
+ var retrievedObject = localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+
+// add a new student
+var newhistory2 = {
+    date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha
+};
+stored.push(newhistory2);
+
+// Update the storage
+localStorage.setItem("histories", JSON.stringify(stored));
+
+ 
+ }
+
+else if(year == setupyear || month == setupmonth || date == setupdate){
+
+ var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ 
+    var retrievedObject = localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+
+stored.pop();
+var newhistory2 = {
+    date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha
+};
+stored.push(newhistory2);
+
+// Update the storage
+localStorage.setItem("histories", JSON.stringify(stored));
+var abc= localStorage.getItem("histories");
+console.log(abc);
+}
+    
+    
+}
+
+    
+}  
+     
+     
+     window.onload = function(){
+         
+         
+         
+         
+         
+         
+         
+         
+     }
+     
+</script>       
 <script src="js/bootstrap/bootstrap.js">  </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

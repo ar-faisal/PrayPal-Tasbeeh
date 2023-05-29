@@ -519,7 +519,7 @@
         }
 
         .bg-goldup {
-            background-color: #2d46b5cf;
+            background-color: #195996;
             position: static;
             z-index: 0;
             text-align: left;
@@ -533,7 +533,7 @@
         }
 
         .bg-golddown {
-            background-color: #7bff55c5;
+            background-color: #40cbff;
             position: static;
             z-index: 0;
             width: 98%;
@@ -1759,87 +1759,10 @@ if (localStorage.clickcount22) {
             });
 
         }
-   function history(){
-if(localStorage.clickcount1 == 100 && localStorage.clickcount2 == 33 && localStorage.clickcount3 == 100 &&
-localStorage.clickcount4 == 6 && localStorage.clickcount5 == 6 &&
-localStorage.clickcount6 == 6 && localStorage.clickcount7 == 6 &&
-localStorage.clickcount8 == 6 && localStorage.clickcount9 == 33 &&
-localStorage.clickcount10 == 33 && localStorage.clickcount11 == 33 && localStorage.clickcount12 == 33 && localStorage.clickcount13 == 33 &&
-localStorage.clickcount14 == 6 && localStorage.clickcount15 == 6 &&
-
-localStorage.clickcount16 == 33 && localStorage.clickcount17 == 33 &&
-
-localStorage.clickcount18 == 33 && localStorage.clickcount19 == 33 &&
-
-localStorage.clickcount20 == 6 && localStorage.clickcount21 == 14 &&
-
-localStorage.clickcount22 == 1 )
-{
-    
-var today = new Date();
-var month = today.toLocaleString('default', { month: 'long' });
-var date = today.getDate();
-var year = today.getFullYear();
-var monthnum = today.getMonth()+1;
-
-
-
-var lasthistorydate= localStorage.getItem('lasthistorydate');
-var lasthistorymonth= localStorage.getItem('lasthistorymonth');
-var lasthistoryyear= localStorage.getItem('lasthistoryyear');
-
-if(lasthistorydate == null){
-console.log("hello");
-
-    localStorage.setItem('lasthistorydate', date);
-    localStorage.setItem('lasthistorymonth', monthnum);
-    localStorage.setItem('lasthistoryyear', year);
-    var history = [];
-    var newhistory = {
-     date:        date,
-     month:         month,
-     year:         year
- };
- history.push(newhistory);
- 
-localStorage.setItem("histories", JSON.stringify(history));
-}
-
-else {
-if(year>lasthistoryyear || monthnum>lasthistorymonth || date>lasthistorydate){
-localStorage.setItem('lasthistorydate', date);
-    localStorage.setItem('lasthistorymonth', monthnum);
-    localStorage.setItem('lasthistoryyear', year);
-
-    var retrievedObject = localStorage.getItem("histories");
-var stored          = JSON.parse(retrievedObject);
-
-// add a new student
-var newhistory2 = {
-    date:        date,
-    month:         month,
-    year: year
-};
-stored.push(newhistory2);
-
-// Update the storage
-localStorage.setItem("histories", JSON.stringify(stored));
-
-
-
-}
-
-}
- }
-      
-}
-
-window.onload = function(){
-
-
-
-var today = new Date();
+function hisso(){
+        var today = new Date();
 var month = today.getMonth()+1;
+var monthstr = today.toLocaleString('default', { month: 'long' });
 var date = today.getDate();
 var year = today.getFullYear();
 
@@ -1847,16 +1770,43 @@ var setupdate= localStorage.getItem('setupdate');
 var setupmonth= localStorage.getItem('setupmonth');
 var setupyear= localStorage.getItem('setupyear');
 
+
+
 if (setupdate == null) {
     localStorage.setItem('setupdate', date);
     localStorage.setItem('setupmonth', month);
     localStorage.setItem('setupyear', year);
-} 
+    
+    var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ 
+    var history = [];
+    var newhistory = {
+     date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha
+ };
+ history.push(newhistory);
+ 
+localStorage.setItem("histories", JSON.stringify(history));
+}
+
 
 
 else{
  if(year>setupyear || month>setupmonth || date>setupdate){
- localStorage.removeItem("clickcount1");
+ 
+localStorage.removeItem("clickcount1");
  localStorage.removeItem("clickcount2");
  localStorage.removeItem("clickcount3");
  localStorage.removeItem("clickcount4");
@@ -1879,15 +1829,111 @@ else{
  localStorage.removeItem("clickcount21");
  localStorage.removeItem("clickcount22");
  localStorage.removeItem("clickucount1");
+ localStorage.removeItem("tasbeeh");
+ localStorage.removeItem("fajr");
+ localStorage.removeItem("dhuhr");
+ localStorage.removeItem("asr");
+ localStorage.removeItem("magrib");
+ localStorage.removeItem("isha");
  
-     localStorage.setItem('setupdate', date);
+ var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ 
+ localStorage.setItem('setupdate', date);
  localStorage.setItem('setupmonth', month);
- localStorage.setItem('setupyear', year);
- }
+ localStorage.setItem('setupyear', year); 
  
+ var retrievedObject = localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+
+// add a new student
+var newhistory2 = {
+    date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha
+};
+stored.push(newhistory2);
+
+// Update the storage
+localStorage.setItem("histories", JSON.stringify(stored));
+
+ 
+ }
+
+else if(year == setupyear || month == setupmonth || date == setupdate){
+
+ var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ 
+    var retrievedObject = localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+
+stored.pop();
+var newhistory2 = {
+    date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha
+};
+stored.push(newhistory2);
+
+// Update the storage
+localStorage.setItem("histories", JSON.stringify(stored));
+var abc= localStorage.getItem("histories");
+console.log(abc);
+}
     
     
 }
+}
+   function history(){
+if(localStorage.clickcount1 == 100 && localStorage.clickcount2 == 33 && localStorage.clickcount3 == 100 &&
+localStorage.clickcount4 == 6 && localStorage.clickcount5 == 6 &&
+localStorage.clickcount6 == 6 && localStorage.clickcount7 == 6 &&
+localStorage.clickcount8 == 6 && localStorage.clickcount9 == 33 &&
+localStorage.clickcount10 == 33 && localStorage.clickcount11 == 33 && localStorage.clickcount12 == 33 && localStorage.clickcount13 == 33 &&
+localStorage.clickcount14 == 6 && localStorage.clickcount15 == 6 &&
+
+localStorage.clickcount16 == 33 && localStorage.clickcount17 == 33 &&
+
+localStorage.clickcount18 == 33 && localStorage.clickcount19 == 33 &&
+
+localStorage.clickcount20 == 6 && localStorage.clickcount21 == 14 &&
+
+localStorage.clickcount22 == 1 )
+{
+    localStorage.setItem('tasbeeh',1);
+    hisso();
+}}
+
+window.onload = function(){
+
+
+
+hisso();
+
+
+
+
 if (localStorage.clickcount1 < 100){
 var element = document.getElementById("p1");
 element.value = localStorage.clickcount1;
