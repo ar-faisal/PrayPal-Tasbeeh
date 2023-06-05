@@ -5,7 +5,10 @@
     </head>
     <body>
         
-      
+ <div id="landscapeol">
+        <h1>Go To Potrait Mode</h1>
+        
+    </div>     
     
 
 
@@ -110,6 +113,37 @@ border: 2px solid #b9890f !important;
 color: #14b40f !important;
 background-color: #14b40f17 !important;
 }
+
+@media (orientation: landscape) {
+
+#landscapeol{
+position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+           background-color: rgba(0, 0, 0, 1);
+            z-index: 10;
+            display:block;
+            color: #ffdc00;
+            font-family: 'Mate SC';
+}
+#landscapeol > h1{
+    position: fixed;
+    left: 33%;
+    top: 30%;
+}
+
+}
+
+@media (orientation: portrait) {
+#landscapeol{
+display:none;
+  
+}}
 
         </style>
         
