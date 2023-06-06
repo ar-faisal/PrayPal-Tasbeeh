@@ -131,31 +131,32 @@ background-color: black;!
     color:#af6aff;
     position: relative;
     left:75%;
-    top:-30%;
+    top:-28%;
     font-size:60px;
     transform: rotate(90deg);
     
     width:20%;
     border: 1px solid yellow;
+    padding-left: 12px;
     
         
 }
 .tread{
-    color: green;
+    color: #00ff2d;
     position: relative;
     top: -360px;
-    padding-left:70%;
+    padding-left:55%;
     font-family: 'Mate SC';
-    font-size: 30px;
+    font-size: 29px;
    
 }
 .tnread{
     color: red;
     position: relative;
     top: -360px;
-    padding-left:70%;
+    padding-left:55%;
     font-family: 'Mate SC';
-    font-size: 30px;
+    font-size: 29px;
 }
 .nread{
     color: #00ff2d;
@@ -170,6 +171,31 @@ background-color: black;!
     top: -270px;
     left: 10px;
     font-family: 'Mate SC';
+}
+.utread{
+    font-size: 29px;
+    color: #00ff2d;
+    position: relative;
+    top: -584px;
+    padding-left:74%;
+    font-family: 'Mate SC';
+}
+.utnread{
+    font-size: 29px;
+    color: red;
+    position: relative;
+    top: -582px;
+    padding-left:74%;
+    font-family: 'Mate SC';
+}
+
+
+.box{
+font-size:30px;
+    color: yellow;
+    position: relative;
+    top: -624px;
+    padding-left:69.5%;
 }
 @media (orientation: landscape) {
 
@@ -214,7 +240,7 @@ display:none;
     
     
     
-    
+  
 
     
     
@@ -317,8 +343,25 @@ if(stored.isha){
  h4.classList.add("nnread");
  div.append(h4);
  }
+ 
+ 
+if(stored.utasbeeh){
+ let h5= document.createElement('h5');
+ h5.innerHTML='Counter: '+ stored.utasbeeh;
+ h5.classList.add("utread");
+ div.append(h5);
+ }
+ else{
+     let h5= document.createElement('h5');
+ h5.innerHTML=`Counter: 0`;
+ h5.classList.add("utnread");
+ div.append(h5);
+ }
 
-
+let h6 = document.createElement('h6');
+h6.innerHTML=`●`;
+ h6.classList.add("box");
+ div.append(h6);
 
 hist.append(div);
        

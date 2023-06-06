@@ -217,6 +217,7 @@ if (setupdate == null) {
  var asr= localStorage.getItem("asr");
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
+ var utasbeeh= localStorage.getItem("clickucount1");
  
     var history = [];
     var newhistory = {
@@ -228,7 +229,8 @@ if (setupdate == null) {
      dhuhr: dhuhr, 
      asr: asr, 
      magrib: magrib,
-     isha : isha
+     isha : isha,
+     utasbeeh : utasbeeh
  };
  history.push(newhistory);
  
@@ -276,6 +278,7 @@ localStorage.removeItem("clickcount1");
  var asr= localStorage.getItem("asr");
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
+ var utasbeeh= localStorage.getItem("clickucount1");
  
  localStorage.setItem('setupdate', date);
  localStorage.setItem('setupmonth', month);
@@ -294,7 +297,8 @@ var newhistory2 = {
      dhuhr: dhuhr, 
      asr: asr, 
      magrib: magrib,
-     isha : isha
+     isha : isha,
+     utasbeeh: utasbeeh
 };
 stored.push(newhistory2);
 
@@ -312,6 +316,7 @@ else if(year == setupyear || month == setupmonth || date == setupdate){
  var asr= localStorage.getItem("asr");
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
+ var utasbeeh= localStorage.getItem("clickucount1");
  
     var retrievedObject = localStorage.getItem("histories");
 var stored          = JSON.parse(retrievedObject);
@@ -326,7 +331,8 @@ var newhistory2 = {
      dhuhr: dhuhr, 
      asr: asr, 
      magrib: magrib,
-     isha : isha
+     isha : isha,
+     utasbeeh : utasbeeh
 };
 stored.push(newhistory2);
 
