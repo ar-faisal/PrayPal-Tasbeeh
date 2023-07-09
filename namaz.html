@@ -142,6 +142,61 @@ background-color: #14b40f17 !important;
 .nav-item {
   margin:5px 0;
   }
+  
+  #fajr {
+  
+  animation: fadeInRight 700ms ease-in-out;
+  animation-delay: 200ms;
+  animation-fill-mode: forwards;
+}
+ 
+ #dhuhr {
+  
+  animation: fadeInLeft 700ms ease-in-out;
+  animation-delay: 300ms;
+  animation-fill-mode: forwards;
+}
+#asr {
+  
+  animation: fadeInRight 700ms ease-in-out;
+  animation-delay: 400ms;
+  animation-fill-mode: forwards;
+}
+#magrib {
+  
+  animation: fadeInLeft 700ms ease-in-out;
+  animation-delay: 500ms;
+  animation-fill-mode: forwards;
+}
+#isha {
+  
+  animation: fadeInRight 700ms ease-in-out;
+  animation-delay: 700ms;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+  @keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.opacity{
+    opacity: 0;
+}
+
 @media (orientation: landscape) {
 
 #landscapeol{
@@ -379,7 +434,20 @@ console.log(abc);
      
      
      window.onload = function()
+     
         { 
+        
+        var element = document.getElementById("fajr");
+        element.classList.add("opacity");
+        var element = document.getElementById("dhuhr");
+        element.classList.add("opacity");
+        var element = document.getElementById("asr");
+        element.classList.add("opacity");
+        var element = document.getElementById("magrib");
+        element.classList.add("opacity");
+        var element = document.getElementById("isha");
+        element.classList.add("opacity");
+        
     var fajr= localStorage.getItem('fajr');
        if(fajr==1){
             var element = document.getElementById("fajr");
