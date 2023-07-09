@@ -1,27 +1,47 @@
 <html>
     <head>
-      
+<link rel="stylesheet" href="css/bootstrap/bootstrap.css">      
 <link rel="stylesheet" href="css/bootstrap/bootstrap1.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
     </head>
     <body>
-        <style>
-            body{
-                background-color:black;
-            }
-            #carouselExampleControls{
-                position : fixed;
-                top:27%;
-            }
-            #floatingbubbles {
-    width: 100%;
-    height: 100%;
-}
-        </style>
-
-<canvas id="floatingbubbles"></canvas>        
         
+     
+<div id="landscapeol">
+        <h1>Go To Potrait Mode</h1>
+        
+</div>        
+
+<nav class="navbar navbar-expand-lg navbar-dark  fs-3">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="unlimitedCounter.html">Infinite Counter</a>
+        </li>
+         <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" aria-current="page" href="namaz.html">Namaz</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link active1 active" aria-current="page" href="#floatingbubbles">Asma Ul Husna</a>
+        </li>
+        <li class="nav-item d-flex justify-content-center">
+          <a class="nav-link" href="history.html">History</a>
+        </li>
+      </ul>
+       
+   
+</nav>
+<canvas id="floatingbubbles"></canvas>   
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -332,6 +352,102 @@
     <span class="sr-only"></span>
   </a>
 </div>
+
+
+<style>
+            body{
+                background-color:black;
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+            #carouselExampleControls{
+                position : fixed;
+                top:27%;
+            }
+            #floatingbubbles {
+    width: 100%;
+    height: 97%;
+}
+@font-face {
+            font-family: 'Mate SC';
+            src: url(fonts/MateSC.ttf);
+
+        }
+        
+   .active1{
+  border : 2px solid green;
+      
+      
+      padding: 10px 85px !important;
+      }
+  
+      nav{
+      font-family: 'Mate SC';
+      
+  }
+  .navbar-toggler{
+    position: relative;
+    left: 3%;
+    color : yellow;
+    border : 1px solid green;
+   
+}
+.nav-item {
+  margin:5px 0;
+  }
+         ul {
+  list-style: none !important;
+}
+
+li {
+  display: inline-block !important;
+   
+}
+@media (orientation: landscape) {
+
+#landscapeol{
+position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+           background-color: rgba(0, 0, 0, 1);
+            z-index: 10;
+            display:block;
+            color: #ffdc00;
+            font-family: 'Mate SC';
+}
+#landscapeol > h1{
+    position: fixed;
+    left: 33%;
+    top: 30%;
+}
+
+}
+
+@media (orientation: portrait) {
+#landscapeol{
+display:none;
+  
+}}
+        </style>
+
+
+
 <script>
     class bubble {
   constructor(canvasWidth, canvasHeight) {
@@ -428,5 +544,9 @@ window.requestAnimFrame = (function() {
     
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/bootstrap/bootstrap1.js">  </script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+<script src="js/bootstrap/bootstrap.js">  </script>
 </body>
 </html>
