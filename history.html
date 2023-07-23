@@ -96,7 +96,7 @@
   margin:5px 0;
   }
   .container-fluid{
-background-color: black;!
+background-color: black;
   }
 .name {
 
@@ -114,95 +114,114 @@ background-color: black;!
     
 }
 #hist > div{
-    height : 15%;
+
+    height : 300px;
     background-color:#002dff1b;
     margin:10% 7%;
     width: 85%;
     justify-content:center;
     border: 2px solid #002dff;
+    
 }
 #hist >div > h1{
 
     color:#00ff18;
     
-    position: relative;
+    position: absolute;
     left:10%;
-    top:10%;
-    font-size:110px;
-    padding-left:7%;
+    margin-top: 3%;
+    font-size:260%;
+    padding-left:13%;
         
 }
 #hist >div > h2{
 
     color:#ff9f80;
    
-    position: relative;
+    position: absolute;
     left:10%;
-    top:0%;
-    font-size:90px;
-    padding-left:7%;
-        
+    margin-top: 14%;
+    font-size:80px;
+    padding-left:13%;
+    font-family: 'Mate SC';    
 }
 #hist >div > h3{
 
     color:#af6aff;
-    position: relative;
-    left:75%;
-    top:-28%;
+    position: absolute;
+    left:71%;
+    margin-top: 17%;
     font-size:60px;
     transform: rotate(90deg);
     
-    width:20%;
+    width:19%;
     border: 1px solid yellow;
-    padding-left: 12px;
+    padding-left: 2%;
     
         
 }
 .tread{
     color: #00ff2d;
-    position: relative;
-    top: -360px;
-    padding-left:52%;
+    position: absolute;
+    margin-top: -2%;
+    padding-left:46%;
     font-family: 'Mate SC';
     font-size: 29px;
    
 }
 .tnread{
     color: red;
-    position: relative;
-    top: -360px;
-    padding-left:52%;
+    position: absolute;
+    margin-top: -2%;
+    padding-left:46%;
     font-family: 'Mate SC';
     font-size: 29px;
 }
 .nread{
     color: #00ff2d;
-    position: relative;
-    top: -270px;
-    left: 10px;
+    position: absolute;
+    
+    left: 10%;
     font-family: 'Mate SC';
+    font-size: 29px;
 }
 .nnread{
     color: #ff1554;
-    position: relative;
-    top: -270px;
-    left: 10px;
+    position: absolute;
+    
+    left: 10%;
     font-family: 'Mate SC';
+    font-size: 29px;
+}
+.nf{
+    margin-top: 5%
+}
+.nz{
+    margin-top: 9%
+}
+.na{
+    margin-top: 13%
+}
+.nm{
+    margin-top: 17%
+}
+.ni{
+    margin-top: 21%
 }
 .utread{
     font-size: 29px;
     color: #00ff2d;
-    position: relative;
-    top: -584px;
-    padding-left:74%;
+    position: absolute;
+    margin-top: -2%;
+    padding-left:65%;
     font-family: 'Mate SC';
 }
 .utnread{
     font-size: 29px;
     color: red;
-    position: relative;
-    top: -582px;
-    padding-left:74%;
+    position: absolute;
+    margin-top: -2%;
+    padding-left:65%;
     font-family: 'Mate SC';
 }
 
@@ -210,9 +229,9 @@ background-color: black;!
 .box{
 font-size:30px;
     color: yellow;
-    position: relative;
-    top: -624px;
-    padding-left:69.5%;
+    position: absolute;
+    margin-top: -2%;
+    padding-left:61%;
 }
 .tascom{
     font-size:32px;
@@ -228,7 +247,7 @@ position: fixed;
             left: 0;
             right: 0;
             bottom: 0;
-           background-color: rgba(0, 0, 0, 1);
+            background-color: rgba(0, 0, 0, 1);
             z-index: 10;
             display:block;
             color: #ffdc00;
@@ -464,12 +483,14 @@ var stored          = JSON.parse(retrievedObject);
  let h4= document.createElement('h4');
  h4.innerHTML=`&#9403`;
  h4.classList.add("nread");
+ h4.classList.add("nf");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
  h4.innerHTML=`&#127285`;
  h4.classList.add("nnread");
+ h4.classList.add("nf");
  div.append(h4);
  }
  
@@ -477,48 +498,56 @@ var stored          = JSON.parse(retrievedObject);
  let h4= document.createElement('h4');
  h4.innerHTML=`&#9401`;
  h4.classList.add("nread");
+ h4.classList.add("nz");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
  h4.innerHTML=`&#127283`;
  h4.classList.add("nnread");
+ h4.classList.add("nz");
  div.append(h4);
  }
  if(stored.asr){
  let h4= document.createElement('h4');
  h4.innerHTML=`&#9398`;
  h4.classList.add("nread");
+ h4.classList.add("na");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
  h4.innerHTML=`&#127280`;
  h4.classList.add("nnread");
+ h4.classList.add("na");
  div.append(h4);
  }
 if(stored.magrib){
  let h4= document.createElement('h4');
  h4.innerHTML=`&#9410`;
  h4.classList.add("nread");
+ h4.classList.add("nm");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
  h4.innerHTML=`&#127292`;
  h4.classList.add("nnread");
+ h4.classList.add("nm");
  div.append(h4);
  }
 if(stored.isha){
  let h4= document.createElement('h4');
  h4.innerHTML=`&#9406`;
  h4.classList.add("nread");
+ h4.classList.add("ni");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
  h4.innerHTML=`&#127288`;
  h4.classList.add("nnread");
+ h4.classList.add("ni");
  div.append(h4);
  }
  
