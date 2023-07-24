@@ -42,6 +42,7 @@
        
    
 </nav>
+<button id="hiscopy" class="btn btn-warning" onclick="copyDivToClipboard()">Copy History To Clipboard</button>
 
 <div id="hist">
     
@@ -236,6 +237,17 @@ font-size:30px;
 .tascom{
     font-size:32px;
 }
+
+#hiscopy{
+    color: red;
+    background-color: black;    
+    position: absolute;
+    right: 10px;   
+    font-family: 'Mate SC';
+}
+
+
+
 @media (orientation: landscape) {
 
 #landscapeol{
@@ -275,6 +287,17 @@ display:none;
     
 </script>
 <script>
+    
+    function copyDivToClipboard() {
+ var range = document.createRange();
+ range.selectNode(document.getElementById("hist"));
+ window.getSelection().removeAllRanges(); // clear current selection
+ window.getSelection().addRange(range); // to select text
+ document.execCommand("copy");
+ window.getSelection().removeAllRanges();// to deselect
+}
+
+
     function hisso(){
         var today = new Date();
 var month = today.getMonth()+1;
@@ -462,14 +485,14 @@ var stored          = JSON.parse(retrievedObject);
  let h2= document.createElement('h2');
  h2.innerHTML=`${stored.month}`;
  let h3= document.createElement('h3');
- h3.innerHTML=`${stored.year}`;
+ h3.innerHTML=`${stored.year}<br/>`;
  div.append(h1);
  div.append(h2);
  div.append(h3);
  
  if(stored.tasbeeh){
  let h4= document.createElement('h4');
- h4.innerHTML=`<span class="tascom">&#9417</span>asbeeh`;
+ h4.innerHTML=`<span class="tascom">&#9417;</span>asbeeh`;
  h4.classList.add("tread");
  div.append(h4);
  }
@@ -481,14 +504,14 @@ var stored          = JSON.parse(retrievedObject);
  }
  if(stored.fajr){
  let h4= document.createElement('h4');
- h4.innerHTML=`&#9403`;
+ h4.innerHTML=` &nbsp;&#9403;`;
  h4.classList.add("nread");
  h4.classList.add("nf");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
- h4.innerHTML=`&#127285`;
+ h4.innerHTML=`&nbsp;&#127285;`;
  h4.classList.add("nnread");
  h4.classList.add("nf");
  div.append(h4);
@@ -496,56 +519,56 @@ var stored          = JSON.parse(retrievedObject);
  
  if(stored.dhuhr){
  let h4= document.createElement('h4');
- h4.innerHTML=`&#9401`;
+ h4.innerHTML=` &nbsp;&#9401;`;
  h4.classList.add("nread");
  h4.classList.add("nz");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
- h4.innerHTML=`&#127283`;
+ h4.innerHTML=` &nbsp;&#127283;`;
  h4.classList.add("nnread");
  h4.classList.add("nz");
  div.append(h4);
  }
  if(stored.asr){
  let h4= document.createElement('h4');
- h4.innerHTML=`&#9398`;
+ h4.innerHTML=` &nbsp;&#9398;`;
  h4.classList.add("nread");
  h4.classList.add("na");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
- h4.innerHTML=`&#127280`;
+ h4.innerHTML=` &nbsp;&#127280;`;
  h4.classList.add("nnread");
  h4.classList.add("na");
  div.append(h4);
  }
 if(stored.magrib){
  let h4= document.createElement('h4');
- h4.innerHTML=`&#9410`;
+ h4.innerHTML=` &nbsp;&#9410;`;
  h4.classList.add("nread");
  h4.classList.add("nm");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
- h4.innerHTML=`&#127292`;
+ h4.innerHTML=` &nbsp;&#127292;`;
  h4.classList.add("nnread");
  h4.classList.add("nm");
  div.append(h4);
  }
 if(stored.isha){
  let h4= document.createElement('h4');
- h4.innerHTML=`&#9406`;
+ h4.innerHTML=` &nbsp;&#9406;<br/>`;
  h4.classList.add("nread");
  h4.classList.add("ni");
  div.append(h4);
  }
  else{
      let h4= document.createElement('h4');
- h4.innerHTML=`&#127288`;
+ h4.innerHTML=` &nbsp;&#127288;<br/>`;
  h4.classList.add("nnread");
  h4.classList.add("ni");
  div.append(h4);
@@ -554,13 +577,13 @@ if(stored.isha){
  
 if(stored.utasbeeh){
  let h5= document.createElement('h5');
- h5.innerHTML='Counter: '+ stored.utasbeeh;
+ h5.innerHTML='Counter: '+ stored.utasbeeh+'<br/>';
  h5.classList.add("utread");
  div.append(h5);
  }
  else{
      let h5= document.createElement('h5');
- h5.innerHTML=`Counter: 0`;
+ h5.innerHTML=`Counter: 0<br/>`;
  h5.classList.add("utnread");
  div.append(h5);
  }
