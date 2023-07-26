@@ -47,7 +47,7 @@
           <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item d-flex justify-content-center">
-          <a class="nav-link active1 active" aria-current="page" href="#customized">Customized</a>
+          <a class="nav-link active1 active" aria-current="page" href="#customized">Customizable</a>
         </li>
         <li class="nav-item d-flex justify-content-center">
           <a class="nav-link" href="unlimitedCounter.html">Infinite Counter</a>
@@ -463,8 +463,17 @@ display:none;
           
         }
         else{
+            
+            let tasbeehstr= String('tasnum' + numoftas);
+            
+         localStorage.removeItem(tasbeehstr);
+            
+            let clickCStr= String('CC' + numoftas);
+            localStorage.removeItem(clickCStr);
+            
             numoftas= numoftas -1;
             localStorage.setItem('numoftas', numoftas);
+            
             window.location.reload();
         }
         
@@ -502,6 +511,7 @@ else {
         var tasbeehstr= String('tasnum' + numoftas);
         
         
+        
 
 
 const tasarray = new Array(tname, tmeaning, tcount);
@@ -510,10 +520,7 @@ localStorage.setItem(tasbeehstr,stri);
         
         
         
-console.log(tasbeehstr);   
-        console.log(localStorage.getItem('tasnum1')); 
-console.log(localStorage.getItem('tasnum2')); 
-console.log(localStorage.getItem('tasnum3'));        console.log(localStorage.getItem('tasnum4')); 
+
 
 let element = document.getElementById("adderdiv");
 element.style.display="none";
@@ -537,7 +544,7 @@ elem.style.display="none";}
     for(let i=1;i<=numoftas;i++){
     
     
-    
+        
     let tasbeehstr= String('tasnum' + i);
     let element = localStorage.getItem(tasbeehstr);
     let stored =JSON.parse(element);
@@ -563,11 +570,11 @@ elem.style.display="none";}
      tasbeehopenoverlay.addEventListener("click", () => {
      
     let clickCStr= String('CC' + i);
-    console.log(clickCStr);
+    
     
     if (localStorage.getItem(clickCStr)) {
     let cn= Number(localStorage.getItem(clickCStr))+1;
-    console.log(cn);
+    
     
  localStorage.setItem(clickCStr,cn);
  
@@ -609,7 +616,7 @@ if (document.getElementById("tprogress").value == document.getElementById("tprog
         
         div.style.color="#40cbff";
         div.style.border="3px solid #195996";
-        console.log("done");
+        
         div.onclick = "";
         
         
