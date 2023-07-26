@@ -103,7 +103,7 @@
 <h1>☆ ENTER TRANSLATION ☆</h1>  
 <input type="text" id="tmeaning"/>
 <h1>☆ ENTER COUNT ☆</h1>  
-<input type="number" min="10" id="tcount" required/><br>
+<input type="number" min="1" id="tcount" required/><br>
 <button type="submit" id="finaladderbut" class="btn btn-light" onclick="finaladder()">register</button>
 </div>
 
@@ -586,7 +586,9 @@ elem.style.display="none";}
   localStorage.setItem(clickCStr,1);
 }
 document.getElementById("tprogress").value = localStorage.getItem(clickCStr);               
-    
+console.log(document.getElementById("tprogress").value);
+console.log(document.getElementById("tprogress").max);
+ 
 if (document.getElementById("tprogress").value == document.getElementById("tprogress").max) {
                 
                 
@@ -610,7 +612,9 @@ if (document.getElementById("tprogress").value == document.getElementById("tprog
     
     
     let clickCStr1= String('CC' + i);
-    if (localStorage.getItem(clickCStr1) >= stored[2]) {
+    console.log(localStorage.getItem(clickCStr1));
+console.log(stored[2]);    
+       if (localStorage.getItem(clickCStr1) == stored[2]) {
     
         
         
@@ -742,6 +746,11 @@ localStorage.removeItem("clickcount1");
  localStorage.removeItem("magrib");
  localStorage.removeItem("isha");
  localStorage.removeItem("ctasbeeh");
+  let numoftas = Number(localStorage.getItem('numoftas'));
+    for(let i=1;i<=numoftas;i++){
+    let clickCStr1= String('CC' + i);
+    localStorage.removeItem(clickCStr1);    
+    }
  
  var tasbeeh= localStorage.getItem("tasbeeh");
  var fajr= localStorage.getItem("fajr");
