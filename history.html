@@ -400,6 +400,11 @@ localStorage.removeItem("clickcount1");
  localStorage.removeItem("magrib");
  localStorage.removeItem("isha");
  localStorage.removeItem("ctasbeeh");
+  let numoftas = Number(localStorage.getItem('numoftas'));
+    for(let i=1;i<=numoftas;i++){
+    let clickCStr1= String('CC' + i);
+    localStorage.removeItem(clickCStr1);    
+    }
  
  var tasbeeh= localStorage.getItem("tasbeeh");
  var fajr= localStorage.getItem("fajr");
