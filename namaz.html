@@ -283,7 +283,7 @@ hisso();
      
      
 function hisso(){
-    var today = new Date();
+        var today = new Date();
 var month = today.getMonth()+1;
 var monthstr = today.toLocaleString('default', { month: 'long' });
 var date = today.getDate();
@@ -307,7 +307,8 @@ if (setupdate == null) {
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
  var utasbeeh= localStorage.getItem("clickucount1");
- 
+ var ctasbeeh=
+localStorage.getItem("ctasbeeh");
     var history = [];
     var newhistory = {
      date:        date,
@@ -319,7 +320,8 @@ if (setupdate == null) {
      asr: asr, 
      magrib: magrib,
      isha : isha,
-     utasbeeh : utasbeeh
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
  };
  history.push(newhistory);
  
@@ -360,6 +362,7 @@ localStorage.removeItem("clickcount1");
  localStorage.removeItem("asr");
  localStorage.removeItem("magrib");
  localStorage.removeItem("isha");
+ localStorage.removeItem("ctasbeeh");
  
  var tasbeeh= localStorage.getItem("tasbeeh");
  var fajr= localStorage.getItem("fajr");
@@ -368,6 +371,7 @@ localStorage.removeItem("clickcount1");
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
  var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh= localStorage.getItem("ctasbeeh");
  
  localStorage.setItem('setupdate', date);
  localStorage.setItem('setupmonth', month);
@@ -387,7 +391,8 @@ var newhistory2 = {
      asr: asr, 
      magrib: magrib,
      isha : isha,
-     utasbeeh: utasbeeh
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
 };
 stored.push(newhistory2);
 
@@ -406,6 +411,7 @@ else if(year == setupyear || month == setupmonth || date == setupdate){
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
  var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh = localStorage.getItem("ctasbeeh");
  
     var retrievedObject = localStorage.getItem("histories");
 var stored          = JSON.parse(retrievedObject);
@@ -421,7 +427,8 @@ var newhistory2 = {
      asr: asr, 
      magrib: magrib,
      isha : isha,
-     utasbeeh : utasbeeh
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
 };
 stored.push(newhistory2);
 
@@ -433,8 +440,6 @@ console.log(abc);
     
     
 }
-
-    
 }
  
      

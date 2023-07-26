@@ -103,7 +103,7 @@
 <h1>☆ ENTER TRANSLATION ☆</h1>  
 <input type="text" id="tmeaning"/>
 <h1>☆ ENTER COUNT ☆</h1>  
-<input type="number" min="0" id="tcount" required/><br>
+<input type="number" min="10" id="tcount" required/><br>
 <button type="submit" id="finaladderbut" class="btn btn-light" onclick="finaladder()">register</button>
 </div>
 
@@ -490,8 +490,8 @@ display:none;
     let tcount = 
 document.getElementById("tcount").value;
 
-if(tname=="" | tmeaning=="" | tcount==""){
-     alert("FILL ALL THE FIELDS!!!");
+if(tname=="" | tmeaning=="" | tcount=="" | tcount=="0"){
+     alert("FILL ALL THE FIELDS CORRECTLY!!!");
 }
 
 else {
@@ -590,9 +590,9 @@ document.getElementById("tprogress").value = localStorage.getItem(clickCStr);
 if (document.getElementById("tprogress").value == document.getElementById("tprogress").max) {
                 
                 
-         var audio = document.getElementById("audio");
+        var audio = document.getElementById("audio");
         audio.play();       
-        
+        history();
         
         window.location.reload();
         
@@ -624,12 +624,202 @@ if (document.getElementById("tprogress").value == document.getElementById("tprog
     
     
     }
-    
+    history();
     
     }
+ 
+    
+ function history(){
+    let xyz= 0
+    let numoftas = Number(localStorage.getItem('numoftas'));
+    if(numoftas==0){
+     localStorage.setItem("ctasbeeh",null);   
+    }
+    for(let i=1;i<=numoftas;i++){     
+    let tasbeehstr= String('tasnum' + i);
+    let element = localStorage.getItem(tasbeehstr);
+    let stored =JSON.parse(element);
+    let clickCStr1= String('CC' + i);
+    if (localStorage.getItem(clickCStr1) == stored[2]) {
+       xyz = xyz+1;
+       
+    }
+    else{
+        
+        
+    }
+    if(xyz == numoftas)
+    {   localStorage.setItem("ctasbeeh",1);
+        hisso();
+        console.log("hisso");
+    }
+    else{
+        localStorage.setItem("ctasbeeh",null);
+        
+    }
+ }   
+    
+ }   
+ 
+function hisso(){
+        var today = new Date();
+var month = today.getMonth()+1;
+var monthstr = today.toLocaleString('default', { month: 'long' });
+var date = today.getDate();
+var year = today.getFullYear();
+
+var setupdate= localStorage.getItem('setupdate');
+var setupmonth= localStorage.getItem('setupmonth');
+var setupyear= localStorage.getItem('setupyear');
+
+
+
+if (setupdate == null) {
+    localStorage.setItem('setupdate', date);
+    localStorage.setItem('setupmonth', month);
+    localStorage.setItem('setupyear', year);
+    
+    var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh=
+localStorage.getItem("ctasbeeh");
+    var history = [];
+    var newhistory = {
+     date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha,
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
+ };
+ history.push(newhistory);
+ 
+localStorage.setItem("histories", JSON.stringify(history));
+}
+
+
+
+else{
+ if(year>setupyear || month>setupmonth || date>setupdate){
+ 
+localStorage.removeItem("clickcount1");
+ localStorage.removeItem("clickcount2");
+ localStorage.removeItem("clickcount3");
+ localStorage.removeItem("clickcount4");
+ localStorage.removeItem("clickcount5");
+ localStorage.removeItem("clickcount6");
+ localStorage.removeItem("clickcount7");
+ localStorage.removeItem("clickcount8");
+ localStorage.removeItem("clickcount9");
+ localStorage.removeItem("clickcount10");
+ localStorage.removeItem("clickcount11");
+ localStorage.removeItem("clickcount12");
+ localStorage.removeItem("clickcount13");
+ localStorage.removeItem("clickcount14");
+ localStorage.removeItem("clickcount15");
+ localStorage.removeItem("clickcount16");
+ localStorage.removeItem("clickcount17");
+ localStorage.removeItem("clickcount18");
+ localStorage.removeItem("clickcount19");
+ localStorage.removeItem("clickcount20");
+ localStorage.removeItem("clickcount21");
+ localStorage.removeItem("clickcount22");
+ localStorage.removeItem("clickucount1");
+ localStorage.removeItem("tasbeeh");
+ localStorage.removeItem("fajr");
+ localStorage.removeItem("dhuhr");
+ localStorage.removeItem("asr");
+ localStorage.removeItem("magrib");
+ localStorage.removeItem("isha");
+ localStorage.removeItem("ctasbeeh");
+ 
+ var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh= localStorage.getItem("ctasbeeh");
+ 
+ localStorage.setItem('setupdate', date);
+ localStorage.setItem('setupmonth', month);
+ localStorage.setItem('setupyear', year); 
+ 
+ var retrievedObject = localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+
+// add a new student
+var newhistory2 = {
+    date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha,
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
+};
+stored.push(newhistory2);
+
+// Update the storage
+localStorage.setItem("histories", JSON.stringify(stored));
+
+ 
+ }
+
+else if(year == setupyear || month == setupmonth || date == setupdate){
+
+ var tasbeeh= localStorage.getItem("tasbeeh");
+ var fajr= localStorage.getItem("fajr");
+ var dhuhr= localStorage.getItem("dhuhr");
+ var asr= localStorage.getItem("asr");
+ var magrib= localStorage.getItem("magrib");
+ var isha= localStorage.getItem("isha");
+ var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh = localStorage.getItem("ctasbeeh");
+ 
+    var retrievedObject = localStorage.getItem("histories");
+var stored          = JSON.parse(retrievedObject);
+
+stored.pop();
+var newhistory2 = {
+    date:        date,
+     month:         monthstr,
+     year:         year,
+     tasbeeh:    tasbeeh,
+     fajr:   fajr,
+     dhuhr: dhuhr, 
+     asr: asr, 
+     magrib: magrib,
+     isha : isha,
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
+};
+stored.push(newhistory2);
+
+// Update the storage
+localStorage.setItem("histories", JSON.stringify(stored));
+var abc= localStorage.getItem("histories");
+console.log(abc);
+}
     
     
-    
+}
+}
     
      </script>    
 <script src="js/bootstrap/bootstrap.js">  </script>

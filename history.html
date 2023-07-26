@@ -181,6 +181,24 @@ background-color: black;
     font-family: 'Mate SC';
     font-size: 29px;
 }
+.ctread{
+    
+    color: #00ff2d;
+    position: absolute;
+    font-family: 'Mate SC';
+    font-size: 29px;
+    padding-left:46%;
+    margin-top: 275px;
+    
+}
+.ctnread{
+    color: red;
+    position: absolute;
+    font-family: 'Mate SC';
+    font-size: 29px;
+    padding-left:46%;
+    margin-top: 275px;
+}
 .nread{
     color: #00ff2d;
     position: absolute;
@@ -326,6 +344,8 @@ if (setupdate == null) {
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
  var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh=
+localStorage.getItem("ctasbeeh");
     var history = [];
     var newhistory = {
      date:        date,
@@ -337,7 +357,8 @@ if (setupdate == null) {
      asr: asr, 
      magrib: magrib,
      isha : isha,
-     utasbeeh : utasbeeh
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
  };
  history.push(newhistory);
  
@@ -378,6 +399,7 @@ localStorage.removeItem("clickcount1");
  localStorage.removeItem("asr");
  localStorage.removeItem("magrib");
  localStorage.removeItem("isha");
+ localStorage.removeItem("ctasbeeh");
  
  var tasbeeh= localStorage.getItem("tasbeeh");
  var fajr= localStorage.getItem("fajr");
@@ -386,6 +408,7 @@ localStorage.removeItem("clickcount1");
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
  var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh= localStorage.getItem("ctasbeeh");
  
  localStorage.setItem('setupdate', date);
  localStorage.setItem('setupmonth', month);
@@ -405,7 +428,8 @@ var newhistory2 = {
      asr: asr, 
      magrib: magrib,
      isha : isha,
-     utasbeeh : utasbeeh
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
 };
 stored.push(newhistory2);
 
@@ -424,6 +448,7 @@ else if(year == setupyear || month == setupmonth || date == setupdate){
  var magrib= localStorage.getItem("magrib");
  var isha= localStorage.getItem("isha");
  var utasbeeh= localStorage.getItem("clickucount1");
+ var ctasbeeh = localStorage.getItem("ctasbeeh");
  
     var retrievedObject = localStorage.getItem("histories");
 var stored          = JSON.parse(retrievedObject);
@@ -439,7 +464,8 @@ var newhistory2 = {
      asr: asr, 
      magrib: magrib,
      isha : isha,
-     utasbeeh : utasbeeh
+     utasbeeh : utasbeeh,
+     ctasbeeh : ctasbeeh
 };
 stored.push(newhistory2);
 
@@ -452,9 +478,6 @@ console.log(abc);
     
 }
 }
-    
-    
-    
     
     
     
@@ -590,12 +613,29 @@ if(stored.utasbeeh){
  h5.classList.add("utnread");
  div.append(h5);
  }
+ 
+if(stored.ctasbeeh==1){
+ let h4= document.createElement('h4');
+ h4.innerHTML=`<span class="tascom">&#9400;</span>ustomized<br/>`;
+ h4.classList.add("ctread");
+ div.append(h4);
+ }
+ else{
+     let h4= document.createElement('h4');
+ h4.innerHTML=`<span class="tascom">&#127282;</span>ustomized<br/>`;
+ h4.classList.add("ctnread");
+ div.append(h4);
+ }
 
+ 
 let h6 = document.createElement('h6');
 h6.innerHTML=`●`;
  h6.classList.add("box");
  div.append(h6);
+ 
+ 
 
+ 
 hist.append(div);
        
        });
